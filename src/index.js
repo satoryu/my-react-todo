@@ -4,9 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const todos = [
+  { task: "Buy Milk", completed: false },
+  { task: "Fix typos", completed: false },
+  { task: "Go to The Office", completed: true }
+]
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App todos={todos}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
