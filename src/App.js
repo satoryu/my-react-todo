@@ -1,5 +1,6 @@
 import TodoInputForm from "./TodoInputForm";
 import TodoList from "./TodoList";
+import TodoFilterSelect from "./TodoFilterSelect";
 import React from 'react'
 
 import './App.css'
@@ -9,7 +10,8 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      todos: this.props.todos
+      todos: this.props.todos,
+      filter: () => true
     }
 
     this.addNewTask = this.addNewTask.bind(this)
@@ -37,11 +39,15 @@ class App extends React.Component {
 
   render() {
     const todos = this.props.todos;
+    const filter = this.state.filter
+    const filteredTodos = todos.filter(filter)
+    const onSelected = (f) => { this.setState({filter: f.filter}) }
 
     return (
       <div className="App">
         <TodoInputForm onSubmit={this.addNewTask} />
-        <TodoList todos={todos} onCompleted={this.completeTodo} />
+        <TodoFilterSelect onSelected={onSelected} />
+        <TodoList todos={filteredTodos} onCompleted={this.completeTodo} />
       </div>
     );
   }
