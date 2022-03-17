@@ -5,9 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const todos = [
-  { task: "Buy Milk", completed: false },
-  { task: "Fix typos", completed: false },
-  { task: "Go to The Office", completed: true }
+  { id: 1, task: "Buy Milk", completed: false },
+  { id: 2, task: "Fix typos", completed: false },
+  { id: 3, task: "Go to The Office", completed: true }
 ]
 
 ReactDOM.render(
