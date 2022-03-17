@@ -19,8 +19,11 @@ export default class TodoInputForm extends React.Component {
 
   onSubmit(event) {
     event.preventDefault();
-    this.props.onSubmit(this.state.task)
-    this.setState({task: ''})
+
+    if (this.state.task.length > 0) {
+      this.props.onSubmit(this.state.task)
+      this.setState({task: ''})
+    }
   }
 
   render () {
