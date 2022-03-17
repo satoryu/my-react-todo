@@ -18,7 +18,7 @@ class App extends React.Component {
 
   addNewTask(task) {
     const todos = this.state.todos
-    todos.push({ id: (new Date).getTime(), task, completed: false })
+    todos.push({ id: (new Date()).getTime(), task, completed: false })
 
     this.setState({
       todos: todos
