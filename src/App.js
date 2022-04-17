@@ -41,7 +41,7 @@ class App extends React.Component {
     const todos = this.props.todos;
     const filter = this.state.filter
     const filteredTodos = todos.filter(filter)
-    const onSelected = (f) => { this.setState({filter: f.filter}) }
+    const onSelected = (filter) => { this.setState({filter: filter}) }
 
     return (
       <div className="App">
